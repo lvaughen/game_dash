@@ -7,16 +7,12 @@ app = Flask(__name__)
  
 app.config['MONGO_URI'] = environ.get('MONGODB_URI','mongodb://localhost:27017/games_db')
 
-# app.config['MONGO_URI'] = environ.get('MONGODB_URI', 'mongodb://localhost:27017/games_db')
-
-
 mongo = PyMongo(app)
 
 @app.route('/')
 def index():
     return 'Hello World'
  
-
 
 @app.route('/api/ms_rank')
 def getMsRanks():
@@ -57,19 +53,6 @@ def getMsGameDetail():
         data.append(item)
 
     return jsonify(data)
-
-#     @app.route('/api/tasks-mongo')
-# def getTasksMongo():
-#     tasks = mongo.db.tasks.find()
-#     data = []
-#     for task in tasks:
-#         item = {
-#             '_id': str(task['_id']),
-#             'description': task['description']
-#         }
-#         data.append(item)
-#     return jsonify(data)
-
 
 
 if  __name__ == '__main__':

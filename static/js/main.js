@@ -1,5 +1,5 @@
 function loadMsrank() {
-    console.log("fix1")
+    console.log("fix2")
     d3.json("/api/ms_rank").then((data) => {
         console.log(data);
         
@@ -7,9 +7,9 @@ function loadMsrank() {
             var listGroup = d3.select("#games");
             var listItem = listGroup.append("li");
             listItem.text(row.game);
-            listItem.attr("class","list-group");
+            listItem.attr("class","list-group-item");
         });
     });
 }
 
-loadMsrank();
+loadMsrank()

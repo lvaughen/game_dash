@@ -12,7 +12,9 @@ mongo = PyMongo(app)
 @app.route('/')
 def index():
     return render_template('index.html')
- 
+
+
+
 
 @app.route('/api/ms_rank')
 def getMsRanks():
